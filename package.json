@@ -9,7 +9,6 @@
     "electron:build": "vue-cli-service electron:build",
     "electron:serve": "vue-cli-service electron:serve",
     "electron:build_all": "vue-cli-service electron:build -mwl",
-    "release:mac": "vue-cli-service electron:build --mac -p always",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
     "test:e2e": "vue-cli-service test:e2e",
