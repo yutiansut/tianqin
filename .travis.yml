@@ -1,44 +1,33 @@
 osx_image: xcode10.2
-
 dist: trusty
-
 sudo: true
-
 language: node_js
-node_js: "10"
-
+node_js: '10'
 cache:
   directories:
   - node_modules
-  - $HOME/.cache/
-
+  - "$HOME/.cache/"
 os:
-  - linux
   - osx
-
 addons:
   apt:
     packages:
     - xvfb
-
 before_install:
-  - npm update -g npm
-
+- npm update -g npm
 install:
-  - export DISPLAY=':99.0'
-  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-  - npm install
-
+- export DISPLAY=':99.0'
+- Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+- npm install
 script:
-  - npm run electron:build_all
-
+- npm run electron:build_all
 branches:
   only:
   - master
-
 deploy:
   provider: releases
-  file: "dist_electron/*"
-  skip_cleanup: true
+  api_key:
+    secure: lPa90tn/Tl9wUjmmnB5XWpicKyiPKMUmqcx1Y3yFF7Ip2gRcUjAhFZFF2jeuC53pqfM2ggDVL/3+dJ7V0WOpynxKGI/m4MjbfxQmEkUCfSQCPJKMP20a7KrKNAgIwv1vDn32EROS/NpbkTTwDz7D8C4a5V6f3D9TTa5mrnNXsFnmxnhx9alhUSLVW7mzQMBa9ma5tRipUEkbgw6wqGWTvs25QpL03xHAPhWC3kK5i1BWTUDC/LTWh2/5S4Tb1qFACx7cHWRDrf21WZhn9YW7iop3AqnekHjbC4IkAJk3/RJntQCdLwDVxUUhMCn6ARWgA0pPqLEVp+OwFsAG8GiuuwjmJISbaVuPhgmbbRXmPcG8X2adjZ1e6OyX1QyC/2A7bZSXC0PYSa/4HmQHj8bpkcHMqfVujUXWOxQGvtca2dtQYNE6xUxdRN3FUoQsHu6ekRbJLmYnh7rcc9e7CrS3ue9fcLaZbtRlkRxdOcH/FnynkpOZFKnkuM+Y5Zb8/GETlN4T5b2ManpQoCtFm52d0OnIbTKxc9wpio6LpJIRt9WAvkFBFOjBq+UG0xQ91k0FYO0Uza7Bhh6CkxFAeAvrECIie1JIeIw/NGEgSRdVYNkTNo7TaLBQgazhZHMzmwjNVrKEp+se6aqPR9C8iPNVQulNezj9PafdybAwUKv2NZ8=
+  file: dist_electron/*
   on:
-    tags: true
+    repo: yanqiong/tianqin
