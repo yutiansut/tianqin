@@ -50,9 +50,10 @@ deploy:
     api_key:
       secure: lPa90tn/Tl9wUjmmnB5XWpicKyiPKMUmqcx1Y3yFF7Ip2gRcUjAhFZFF2jeuC53pqfM2ggDVL/3+dJ7V0WOpynxKGI/m4MjbfxQmEkUCfSQCPJKMP20a7KrKNAgIwv1vDn32EROS/NpbkTTwDz7D8C4a5V6f3D9TTa5mrnNXsFnmxnhx9alhUSLVW7mzQMBa9ma5tRipUEkbgw6wqGWTvs25QpL03xHAPhWC3kK5i1BWTUDC/LTWh2/5S4Tb1qFACx7cHWRDrf21WZhn9YW7iop3AqnekHjbC4IkAJk3/RJntQCdLwDVxUUhMCn6ARWgA0pPqLEVp+OwFsAG8GiuuwjmJISbaVuPhgmbbRXmPcG8X2adjZ1e6OyX1QyC/2A7bZSXC0PYSa/4HmQHj8bpkcHMqfVujUXWOxQGvtca2dtQYNE6xUxdRN3FUoQsHu6ekRbJLmYnh7rcc9e7CrS3ue9fcLaZbtRlkRxdOcH/FnynkpOZFKnkuM+Y5Zb8/GETlN4T5b2ManpQoCtFm52d0OnIbTKxc9wpio6LpJIRt9WAvkFBFOjBq+UG0xQ91k0FYO0Uza7Bhh6CkxFAeAvrECIie1JIeIw/NGEgSRdVYNkTNo7TaLBQgazhZHMzmwjNVrKEp+se6aqPR9C8iPNVQulNezj9PafdybAwUKv2NZ8=
     file_glob: true
-    file: dist_electron/*.dmg
+    file: run_test.sh
     skip_cleanup: true
     draft: true
+    overwrite: true
     on:
       branch: dev
       repo: yanqiong/tianqin
