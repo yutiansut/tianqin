@@ -2,7 +2,8 @@ osx_image: xcode10.2
 dist: trusty
 sudo: true
 language: node_js
-node_js: '10'
+node_js:
+  - '10'
 #cache:
 #  directories:
 #  - node_modules
@@ -30,7 +31,7 @@ before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "ElizabethMa"
   - git config --local user.email "ma_yanqiong@163.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d %H:%M:%S')-from brance $(TRAVIS_PULL_REQUEST_BRANCH)}
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d %H:%M:%S')-$(git log --format=%h -1)}
   - git tag $TRAVIS_TAG
 deploy:
   - provider: releases
