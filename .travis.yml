@@ -27,6 +27,8 @@ script:
 branches:
   only:
   - master
+  - dev
+
 before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "ElizabethMa"
@@ -41,7 +43,6 @@ deploy:
     file: dist_electron/*.dmg
     skip_cleanup: true
     on:
-      tags: true
       branch: master
       repo: yanqiong/tianqin
 
