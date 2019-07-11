@@ -53,6 +53,7 @@ deploy:
     file: run_test.sh
     skip_cleanup: true
     draft: true
+    name: ${Draft $TRAVIS_TAG}
     overwrite: true
     on:
       branch: dev
