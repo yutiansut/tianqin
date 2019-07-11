@@ -43,6 +43,7 @@ deploy:
     file: dist_electron/*.dmg
     skip_cleanup: true
     on:
+      tags: true
       branch: master
       repo: yanqiong/tianqin
 
@@ -53,7 +54,7 @@ deploy:
     file: run_test.sh
     skip_cleanup: true
     draft: true
-    name: ${Draft $TRAVIS_TAG}
+    name: "Draft $TRAVIS_TAG"
     overwrite: true
     on:
       branch: dev
