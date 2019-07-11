@@ -16,6 +16,10 @@
     "test": "node -v && npm -v"
   },
   "main": "background.js",
+  "build": {
+    "appId": "com.shinnytech.tianqin",
+    "productName": "tianqin"
+  },
   "dependencies": {
     "chai-as-promised": "^7.1.1",
     "core-js": "^2.6.5",
